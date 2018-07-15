@@ -20,7 +20,7 @@ Configs, instructions and tools for hosting stuff on the web.
 After installation:
 
         sudo chown <username>:<username>  -R * # Let your useraccount be owner
-        sudo chown www-data:www-data wp-content # Let apache be owner of wp-content
+        sudo chown -R www-data:www-data wp-content # Let apache be owner of wp-content
 
 # Apache
 For apache2 on ubuntu circa 16.04.
