@@ -48,3 +48,9 @@ For apache2 on ubuntu circa 16.04.
                order allow,deny 
                allow from all
             </Directory>
+
+
+# OS
+1. Fix "unable to resolve host" shell message. Add to /etc/hosts
+
+        127.0.0.1 ip-172-30-2-180
