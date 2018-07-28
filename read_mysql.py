@@ -11,11 +11,14 @@ def fix_photo_url(url):
     Replace old photoalbum links with current ones
     '''
     if 'photoalbum' in url:
-        #print(url)
-        l_path = url.split('%2F')[1:]
-        #print(l_path)
-        l_path[-1] = l_path[-1].split('&')[0]
+        if 'album=' in url:
+            l_path = url.split('album=')[-1].strip('%2F').split('%2F')
+            if len(l_path)>0:
+                l_path[-1] = l_path[-1].split('&')[0]
+        else:
+            l_path=[]
         _res = 'http://kukartsev.com/photos/{}'.format('/'.join(l_path))
+        print(_res)
     else:
         _res = url
     return(_res)
@@ -91,8 +94,8 @@ def process_inline_image(soup, link, href,
     link.unwrap()
     #sup.unwrap()
 
-    if _debug:
-        print(soup)
+    #if _debug:
+    #    print(soup)
     
     # extract path to file from root of the photoalbum
     # (we will copy the file for embedding into wordpress
@@ -179,7 +182,7 @@ FROM nucleus_item i
 inner join nucleus_member m
     on m.mnumber=i.iauthor
 where 
-    iblog=7
+    iblog=8
 ''')
 
     _dt = []
@@ -207,8 +210,8 @@ where
         _author.append(ftfy.fix_text(r[4]))
 
         # debug
-        print(_fixed_text)
-        print('--------------------------')
+        #print(_fixed_text)
+        #print('--------------------------')
         #if i==100:
         #    raise(Exception)
 
@@ -220,5 +223,7 @@ where
     })
 
     # remove stupid datetime - duplicates
-    df.loc[df.post_date_time>'1970-01-01',['author','post_date_time','title','text']].to_csv('vika6.csv',index=False)
-    print(df.iloc[11:17,:].head(10))
+    #df.loc[df.post_date_time>'1970-01-01',['author','post_date_time','title','text']].to_csv('gena1.csv',index=False)
+    #df.loc[df.post_date_time>'1970-01-01',['author','post_date_time','title','text']].to_csv('vika7.csv',index=False)
+    df.loc[:,['author','post_date_time','title','text']].to_csv('metal8.csv',index=False)
+    print(df.head(10))
