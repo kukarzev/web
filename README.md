@@ -16,7 +16,7 @@ Configs, instructions and tools for hosting stuff on the web.
         sudo chown www-data:www-data ../sitefolder
         sudo chown www-data:www-data  -R *
         sudo find . -type d -exec chmod 755 {} \;
-        find . -type f -exec chmod 644 {} \;
+        sudo find . -type f -exec chmod 644 {} \;
 After installation:
 
         sudo chown <username>:<username>  -R * # Let your useraccount be owner
