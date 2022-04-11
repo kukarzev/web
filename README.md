@@ -1,4 +1,8 @@
 # Hosting Stuff on the Web
+
+* [Wordpress](#wordpress)
+* [Wordpress Backup](#wordpress-backup)
+
 Configs, instructions and tools for hosting stuff on the web.
 
 # Wordpress
@@ -21,6 +25,9 @@ After installation:
 
         sudo chown <username>:<username>  -R * # Let your useraccount be owner
         sudo chown -R www-data:www-data wp-content # Let apache be owner of wp-content
+        
+## Wordpress Backup
+See [backup.md](backup.md)
 
 # Apache
 For apache2 on ubuntu circa 16.04.
