@@ -1,7 +1,9 @@
 # Hosting Stuff on the Web
 
 * [Wordpress](#wordpress)
-* [Wordpress Backup](#wordpress-backup)
+  * [Wordpress Backup](#wordpress-backup)
+* [Apache](#apache)
+* [Operating System](#os)
 
 Configs, instructions and tools for hosting stuff on the web.
 
